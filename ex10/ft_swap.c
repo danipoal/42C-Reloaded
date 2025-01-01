@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danalvar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/01 17:33:32 by danalvar          #+#    #+#             */
-/*   Updated: 2025/01/01 17:36:29 by danalvar         ###   ########.fr       */
+/*   Created: 2025/01/01 17:37:10 by danalvar          #+#    #+#             */
+/*   Updated: 2025/01/01 18:01:01 by danalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+//#include <stdio.h>
 
-void	ft_putchar(char c);
-
-/*void	ft_putchar(char c)
+void	ft_swap(int *a, int *b)
 {
-	write(1, &c, 1);
-}*/
+	int	tmp;
 
-void	ft_print_numbers(void)
-{
-	char	a;
-
-	a = '0';
-	while (a <= '9')
-		ft_putchar(a++);
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
 }
 
 /*int	main(void)
 {
-	ft_print_numbers();
+	int	a;
+	int	b;
+
+	a = 2;
+	b = 4;
+	ft_swap(&a, &b);
+	printf("%i\n", a);
 	return (0);
 }*/

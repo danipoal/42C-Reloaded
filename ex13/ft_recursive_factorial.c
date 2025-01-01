@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
+/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danalvar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/01 17:33:32 by danalvar          #+#    #+#             */
-/*   Updated: 2025/01/01 17:36:29 by danalvar         ###   ########.fr       */
+/*   Created: 2025/01/01 18:37:43 by danalvar          #+#    #+#             */
+/*   Updated: 2025/01/01 19:16:24 by danalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+//#include <stdio.h>
 
-void	ft_putchar(char c);
-
-/*void	ft_putchar(char c)
+int	ft_recursive_factorial(int nb)
 {
-	write(1, &c, 1);
-}*/
+	int	sum;
 
-void	ft_print_numbers(void)
-{
-	char	a;
-
-	a = '0';
-	while (a <= '9')
-		ft_putchar(a++);
+	if (nb == 0)
+		return (1);
+	if (nb < 0)
+		return (0);
+	sum = 1;
+	if (nb > 1)
+		sum = ft_recursive_factorial(nb - 1);
+	return (sum * nb);
 }
 
 /*int	main(void)
 {
-	ft_print_numbers();
+	int	n;
+
+	n = ft_recursive_factorial(5);
+	printf("%i\n", n);
 	return (0);
 }*/

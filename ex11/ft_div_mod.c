@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
+/*   ft_div_mod.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danalvar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/01 17:33:32 by danalvar          #+#    #+#             */
-/*   Updated: 2025/01/01 17:36:29 by danalvar         ###   ########.fr       */
+/*   Created: 2025/01/01 17:37:10 by danalvar          #+#    #+#             */
+/*   Updated: 2025/01/01 18:27:11 by danalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+//#include <stdio.h>
 
-void	ft_putchar(char c);
-
-/*void	ft_putchar(char c)
+void	ft_div_mod(int a, int b, int *div, int *mod)
 {
-	write(1, &c, 1);
-}*/
-
-void	ft_print_numbers(void)
-{
-	char	a;
-
-	a = '0';
-	while (a <= '9')
-		ft_putchar(a++);
+	*div = a / b;
+	*mod = a % b;
 }
 
 /*int	main(void)
 {
-	ft_print_numbers();
+	int	a;
+	int	b;
+	int	div;
+	int	mod;
+
+	a = 4;
+	b = 2;
+	ft_div_mod(a, b, &div, &mod);
+	printf("%i / %i -> quo: %i mod: %i\n", a, b, div, mod);
 	return (0);
 }*/
