@@ -1,55 +1,62 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danalvar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/07 17:16:09 by danalvar          #+#    #+#             */
-/*   Updated: 2025/01/07 17:17:11 by danalvar         ###   ########.fr       */
+/*   Created: 2025/01/07 16:13:10 by danalvar          #+#    #+#             */
+/*   Updated: 2025/01/07 17:11:24 by danalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 //#include <stdio.h>
-//#include <string.h>
 
 int	ft_strlen(char *str)
 {
-	int	len;
+	int	i;
 
-	len = 0;
-	while (str[len] != '\0')
-		len++;
-	return (len);
+	i = 0;
+	while (*str != '\0')
+	{
+		str++;
+		i++;
+	}
+	return (i);
 }
 
-int	ft_strcmp(char *s1, char *s2)
+char	*ft_strcpy(char *src, char *dest)
 {
 	int	i;
-	int	len1;
-	int	len2;
 
-	len1 = ft_strlen(s1);
-	len2 = ft_strlen(s2);
-	if (*s1 != '\0' || *s2 != '\0')
+	i = 0;
+	while (src[i] != '\0')
 	{
-		i = 0;
-		while (i < len1 || i < len2)
-		{
-			if (s1[i] != s2[i])
-				return (s1[i] - s2[i]);
-			i++;
-		}
+		dest[i] = src[i];
+		i++;
 	}
-	return (0);
+	dest[i] = '\0';
+	return (dest);
+}
+
+char	*ft_strdup(char *src)
+{
+	char	*dup;
+	int		len;
+
+	len = ft_strlen(src);
+	dup = (char *) malloc((len + 1) * sizeof(char));
+	if (dup == NULL)
+		return (NULL);
+	ft_strcpy(src, dup);
+	return (dup);
 }
 
 /*int	main(void)
 {
-	char* s1 = "Hola";
-	char* s2 = "Holi";
+	char	src[] = "Hola";
 
-	printf("Diff: %i\n", ft_strcmp(s1, s2));
-	printf("Diff: %i\n", strcmp(s1, s2));
+	printf("%s y ya\n", ft_strdup(src));
 	return (0);
 }*/

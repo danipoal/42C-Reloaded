@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_sort_params.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danalvar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 17:37:10 by danalvar          #+#    #+#             */
-/*   Updated: 2025/01/01 17:39:44 by danalvar         ###   ########.fr       */
+/*   Updated: 2025/01/07 16:40:13 by danalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,10 @@ int	ft_strcmp(char *s1, char *s2)
 	return (0);
 }
 
-int	ft_print_params(int argc, char** argv)
+int	ft_print_params(int argc, char **argv)
 {
 	int	i;
+
 	i = 1;
 	while (i < argc)
 	{
@@ -66,23 +67,27 @@ int	ft_print_params(int argc, char** argv)
 	return (0);
 }
 
-int	main(int argc, char** argv)
+int	main(int argc, char **argv)
 {
-	int	i;
-	char*	tmp;
+	int		i;
+	int		j;
+	char	*tmp;
 
 	i = 1;
-	while (i <= argc / 2)
+	while (i < argc)
 	{
-		if (ft_strcmp(argv[i], argv[argc - i]) > 0)
+		j = i;
+		while (j < argc)
 		{
-			tmp = argv[i];
-			argv[i] = argv[argc - i];
-			argv[argc - i] = tmp;
-			i = 1;
+			if (ft_strcmp(argv[i], argv[j]) > 0)
+			{
+				tmp = argv[i];
+				argv[i] = argv[j];
+				argv[j] = tmp;
+			}
+			j++;
 		}
-		else
-			i++;
+		i++;
 	}
 	ft_print_params(argc, argv);
 	return (0);

@@ -1,37 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_params.c                                  :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danalvar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/01 17:37:10 by danalvar          #+#    #+#             */
-/*   Updated: 2025/01/07 17:17:51 by danalvar         ###   ########.fr       */
+/*   Created: 2025/01/07 17:19:49 by danalvar          #+#    #+#             */
+/*   Updated: 2025/01/07 17:44:31 by danalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+//#include <stdio.h>
+#include <stdlib.h>
 
-void	ft_putchar(char c);
-
-/*void	ft_putchar(char c)
+int	*ft_range(int min, int max)
 {
-	write(1, &c, 1);
-}*/
+	int	*array;
+	int	i;
+	int	size;	
 
-int	main(int argc, char **argv)
+	if (min >= max)
+		return (NULL);
+	size = max - min;
+	array = (int *) malloc((size) * sizeof(int));
+	if (array == NULL)
+		return (NULL);
+	i = 0;
+	while (i < (size))
+	{
+		array[i] = min;
+		min++;
+		i++;
+	}
+	return (array);
+}
+
+/*int	main(void)
 {
+	int	*array;
 	int	i;
 
-	i = 1;
-	while (i < argc)
+	array = ft_range(1, 20);
+	i = 0;
+	while (array[i])
 	{
-		while (*argv[i] != '\0')
-		{
-			ft_putchar(*argv[i]++);
-		}
-		ft_putchar('\n');
+		printf("%i\n", array[i]);
 		i++;
 	}
 	return (0);
-}
+}*/
