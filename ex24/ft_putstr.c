@@ -1,37 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danalvar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/01 18:37:43 by danalvar          #+#    #+#             */
-/*   Updated: 2025/01/07 18:26:08 by danalvar         ###   ########.fr       */
+/*   Created: 2025/01/01 17:33:32 by danalvar          #+#    #+#             */
+/*   Updated: 2025/01/01 20:09:19 by danalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include <unistd.h>
 
-int	ft_iterative_factorial(int nb)
+void	ft_putchar(char c);
+
+/*void	ft_putchar(char c)
 {
-	int	sum;
+	write(1, &c, 1);
+}*/
 
-	if (nb < 0 || nb > 12)
-		return (0);
-	sum = 1;
-	while (nb > 1)
+void	ft_putstr(char *str)
+{
+	while (*str != '\0')
 	{
-		sum *= nb;
-		nb--;
+		ft_putchar(*str);
+		str++;
 	}
-	return (sum);
 }
 
 /*int	main(void)
 {
-	int	n;
-
-	n = ft_iterative_factorial(1);
-	printf("%i\n", n);
+	ft_putstr("Hola qe tal");
 	return (0);
 }*/

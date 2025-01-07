@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danalvar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/01 18:37:43 by danalvar          #+#    #+#             */
-/*   Updated: 2025/01/07 18:26:08 by danalvar         ###   ########.fr       */
+/*   Created: 2024/10/17 13:46:07 by danalvar          #+#    #+#             */
+/*   Updated: 2024/10/17 15:57:35 by danalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include <unistd.h>
 
-int	ft_iterative_factorial(int nb)
+void	ft_putchar(char c)
 {
-	int	sum;
-
-	if (nb < 0 || nb > 12)
-		return (0);
-	sum = 1;
-	while (nb > 1)
-	{
-		sum *= nb;
-		nb--;
-	}
-	return (sum);
+	write(1, &c, 1);
 }
 
-/*int	main(void)
+/*
+int	main(void)
 {
-	int	n;
-
-	n = ft_iterative_factorial(1);
-	printf("%i\n", n);
+	ft_putchar('a');
 	return (0);
-}*/
+}
+*/
