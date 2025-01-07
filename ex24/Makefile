@@ -1,10 +1,16 @@
 NAME = libft.a
-
-CC = cc
-CFLAGS = -Wall -Wextra -Werror
-
-SRCS = ft_putchar.c ft_putstr.c ft_strcmp.c ft_strlen.c ft_swap.c
+SRCS = srcs/ft_putchar.c \
+       srcs/ft_putstr.c \
+       srcs/ft_strcmp.c \
+       srcs/ft_strlen.c \
+       srcs/ft_swap.c
+       
 OBJS = $(SRCS:.c=.o)
+INC_DIR = includes 
+CC = cc
+CFLAGS = -Wall -Wextra -Werror -I$(INC_DIR)
+
+
 
 # Regla all para compilar libreria
 all: $(NAME)
